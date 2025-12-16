@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 个人记录系统</title>
+    <link rel="stylesheet" href="/viewer/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>🧠 ReAct System</h1>
+                <p class="subtitle">个人记录与复盘</p>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <h3>📂 目录</h3>
+                    <ul id="file-tree">
+                        <li class="folder" data-path="inbox">
+                            <span class="folder-icon">📥</span> inbox
+                        </li>
+                        <li class="folder" data-path="areas">
+                            <span class="folder-icon">🎯</span> areas
+                            <ul class="sub-folder">
+                                <li data-path="areas/工作">工作</li>
+                                <li data-path="areas/学习">学习</li>
+                                <li data-path="areas/生活">生活</li>
+                                <li data-path="areas/健康">健康</li>
+                            </ul>
+                        </li>
+                        <li class="folder" data-path="projects">
+                            <span class="folder-icon">🚀</span> projects
+                        </li>
+                        <li class="folder" data-path="reviews">
+                            <span class="folder-icon">🔄</span> reviews
+                            <ul class="sub-folder">
+                                <li data-path="reviews/daily">每日复盘</li>
+                                <li data-path="reviews/weekly">每周复盘</li>
+                                <li data-path="reviews/monthly">每月复盘</li>
+                            </ul>
+                        </li>
+                        <li class="folder" data-path="knowledge">
+                            <span class="folder-icon">📚</span> knowledge
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="stats">
+                <h3>📊 统计</h3>
+                <div class="stat-item">
+                    <span class="stat-label">今日记录</span>
+                    <span class="stat-value" id="today-count">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">本周复盘</span>
+                    <span class="stat-value" id="week-reviews">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">活跃项目</span>
+                    <span class="stat-value" id="active-projects">-</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="breadcrumb" id="breadcrumb">
+                    <span>首页</span>
+                </div>
+                <div class="header-actions">
+                    <span class="current-time" id="current-time"></span>
+                </div>
+            </header>
+
+            <div class="content-body" id="content-body">
+                <!-- 欢迎页 -->
+                <div class="welcome-page">
+                    <h2>👋 欢迎使用个人记录系统</h2>
+
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">📥</div>
+                            <div class="stat-info">
+                                <span class="stat-number">5</span>
+                                <span class="stat-desc">待分类记录</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-info">
+                                <span class="stat-number">1</span>
+                                <span class="stat-desc">进行中项目</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-info">
+                                <span class="stat-number">3</span>
+                                <span class="stat-desc">知识沉淀</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔄</div>
+                            <div class="stat-info">
+                                <span class="stat-number">1</span>
+                                <span class="stat-desc">复盘记录</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="react-cycle">
+                        <h3>🔄 ReAct 循环</h3>
+                        <div class="cycle-diagram">
+                            <div class="cycle-step active">
+                                <span class="step-icon">👀</span>
+                                <span class="step-name">Observe</span>
+                                <span class="step-desc">信息输入</span>
+                            </div>
+                            <div class="cycle-arrow">→</div>
+                            <div class="cycle-step">
+                                <span class="step-icon">🎯</span>
+                                <span class="step-name">Act</span>
+                                <span class="step-desc">执行行动</span>
+                            </div>
+                            <div class="cycle-arrow">→</div>
+                            <div class="cycle-step">
+                                <span class="step-icon">🤔</span>
+                                <span class="step-name">Reflect</span>
+                                <span class="step-desc">复盘反思</span>
+                            </div>
+                            <div class="cycle-arrow">→</div>
+                            <div class="cycle-step">
+                                <span class="step-icon">📐</span>
+                                <span class="step-name">Reason</span>
+                                <span class="step-desc">调整规划</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>📝 最近记录</h3>
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <span class="activity-time">2025-12-16</span>
+                                <span class="activity-type project">项目</span>
+                                <span class="activity-title">AI商品图 - 周会洞察</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-time">2025-12-16</span>
+                                <span class="activity-type knowledge">知识</span>
+                                <span class="activity-title">豆包AI手机行业分析</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-time">2025-12-16</span>
+                                <span class="activity-type knowledge">知识</span>
+                                <span class="activity-title">ReAct模型与人生成长</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-time">2025-12-16</span>
+                                <span class="activity-type idea">灵感</span>
+                                <span class="activity-title">AI工具变现观察</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/viewer/app.js"></script>
+</body>
+
+</html>
