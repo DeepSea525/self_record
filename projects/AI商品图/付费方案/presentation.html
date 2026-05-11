@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 商品图商业化方案</title>
+    <!-- Tailwind CSS (via CDN for simplicity as per user flexibility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #374151;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p,
+        li {
+            line-height: 1.75;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #2563eb;
+        }
+
+        blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1rem;
+            color: #6b7280;
+            font-style: italic;
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background-color: #dbeafe;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #1e40af;
+        }
+
+        .mermaid-container {
+            text-align: center;
+            margin: 30px 0;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen py-10">
+
+    <div class="max-w-4xl mx-auto px-4">
+
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-slate-800 tracking-tight">AI 商品图商业化方案</h1>
+            <p class="text-xl text-slate-500 mt-4">Top-down 战略视角 | 价值对齐 · 分层运营 · 体验闭环</p>
+            <p class="text-sm text-slate-400 mt-2">版本: v1.0 | 2025-12-18</p>
+        </div>
+
+        <!-- 1. 核心理念 -->
+        <div class="slide">
+            <h2>1. 核心理念 (Core Philosophy)</h2>
+            <div class="bg-blue-50 p-6 rounded-lg mb-6 border border-blue-100">
+                <p class="text-2xl font-bold text-blue-900 text-center">“不仅是好看，更是‘我的店’的升级版。”</p>
+            </div>
+            <p>商业化的核心抓手不是“AI 技术”，而是<strong>“超越预期的门店审美”</strong>。</p>
+            <ul class="mt-4 space-y-2">
+                <li><strong>比原图更好</strong>：美感必须显著高于商家自己手机拍摄的水平（解决“为什么要用”）。</li>
+                <li><strong>比网图更像</strong>：必须保留商家独特的门店/产品特征（解决“为什么敢用”）。</li>
+                <li><strong>比找人更省</strong>：在有限的尝试次数内，让商家感知到“省力”且“专业”。</li>
+            </ul>
+        </div>
+
+        <!-- 2. 商业模式图 -->
+        <div class="slide">
+            <h2>2. 商业模式全景图 (Business Model Framework)</h2>
+            <p class="mb-4 text-gray-500 text-sm">清晰展示付费与免费商户的不同运营路径及底层通用积分逻辑。</p>
+
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph TD
+                    User[商户类型] -->|分层运营| PaidUser(付费 SaaS 商户)
+                    User -->|分层运营| FreeUser(免费 SaaS 商户)
+
+                    %% Paid User Path
+                    PaidUser -->|策略: 权益感 & 留存| MonthlyGift[月度赠送积分]
+                    MonthlyGift -->|覆盖核心动销品| Usage{使用消耗}
+                    Usage -->|额度内| Loop[习惯养成]
+                    Usage -->|额度耗尽| BuyPacks[购买积分包]
+                    Loop --> Retention[SaaS 续费率提升]
+                    BuyPacks --> Retention
+
+                    %% Free User Path
+                    FreeUser -->|策略: 制造反差 The Itch| Trial[2-3次 尝鲜体验]
+                    Trial -->|产生不完整套图| Itch{视觉心理博弈}
+                    Itch -->|想要补齐| TaskReward[做任务赚积分]
+                    Itch -->|想要补齐| BuyPacks
+                    TaskReward --> Conversion[活跃度/转化]
+                    BuyPacks --> Conversion
+
+                    %% Infrastructure
+                    subgraph Infrastructure [底层通用货币体系]
+                    Credits((通用积分 Credits))
+                    end
+                    BuyPacks -.-> Credits
+                    MonthlyGift -.-> Credits
+                    TaskReward -.-> Credits
+                    Credits -.->|支付| AI_Image[AI 生图]
+                    Credits -.->|支付| AI_Analytics[后续: AI 经营分析]
+
+                    style User fill:#f3f4f6,stroke:#374151,stroke-width:2px
+                    style PaidUser fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+                    style FreeUser fill:#fce7f3,stroke:#db2777,stroke-width:2px
+                    style Credits fill:#fff7ed,stroke:#ea580c,stroke-width:2px,stroke-dasharray: 5 5
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 核心竞争壁垒 -->
+        <div class="slide">
+            <h2>3. 核心竞争壁垒 (Why not Doubao?)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="border border-gray-200 p-5 rounded-lg">
+                    <h4 class="font-bold text-gray-500 mb-2">通用 AI (豆包/Kimi)</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li class="flex items-start"><span class="mr-2">❌</span>需用户手打 Prompt 描述</li>
+                        <li class="flex items-start"><span class="mr-2">❌</span>生成->保存->上传，流程断裂</li>
+                        <li class="flex items-start"><span class="mr-2">❌</span>不懂店铺具体风格</li>
+                    </ul>
+                </div>
+                <div class="border border-blue-200 bg-blue-50 p-5 rounded-lg">
+                    <h4 class="font-bold text-blue-700 mb-2">垂直 SaaS (我们)</h4>
+                    <ul class="text-sm space-y-2 text-blue-900">
+                        <li class="flex items-start"><span class="mr-2">✅</span><strong>数据上下文</strong>：已有菜品/价格，自动注入
+                            Prompt</li>
+                        <li class="flex items-start"><span class="mr-2">✅</span><strong>场景闭环</strong>：生成即应用，一键生效</li>
+                        <li class="flex items-start"><span class="mr-2">✅</span><strong>省时</strong>：卖的不是图，是效率</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 (Legacy 3). 商业化模型细节 -->
+        <div class="slide">
+            <h2>4. 商业化模型细节</h2>
+            <p>采用 <strong>“SaaS 内嵌 + 通用积分货币体系”</strong>。</p>
+
+            <div class="mt-8 space-y-8">
+                <div>
+                    <h3 class="flex items-center"><span
+                            class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">付费商户</span>
+                        价值：Retention & ARPU</h3>
+                    <blockquote class="mt-2 text-sm">既然已付费，不再进行二次强推销，而是强调“特权”。</blockquote>
+                    <ul class="mt-4">
+                        <li><strong>月度赠送</strong>：建议 <strong>50积分/月</strong>（覆盖15% SKU换新）。</li>
+                        <li><strong>过期清零</strong>：刺激月度活跃。</li>
+                        <li><strong>逻辑</strong>：生图是 SaaS 的高价值附赠品。</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="flex items-center"><span
+                            class="bg-pink-100 text-pink-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">免费商户</span>
+                        价值：Activation & Conversion</h3>
+                    <blockquote class="mt-2 text-sm">价格敏感，主打“制造反差”与“痒点营销”。</blockquote>
+                    <ul class="mt-4">
+                        <li><strong>不完整的完美 (The Itch Strategy)</strong>：赠送额度只够体验 2-3 次流程，制造“想要更多”的欲望。</li>
+                        <li><strong>心理博弈</strong>：逼迫强迫症，驱动任务赚分或付费补齐。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. 产品策略 -->
+        <div class="slide">
+            <h2>5. 产品与技术策略</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                <div>
+                    <h3 class="text-blue-600">质量攻坚 (Aesthetics)</h3>
+                    <p class="text-sm text-gray-500 mb-2">现状：商家觉得不如自己拍的。</p>
+                    <ul class="text-sm">
+                        <li><strong>风格化模版</strong>：固定 ControlNet 模版（如“日式居酒屋”），减少自由度，保下限。</li>
+                        <li><strong>个性化微调</strong>：上传环境图，让背景带门店影子。</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-blue-600">缺陷兜底 (Tooling)</h3>
+                    <p class="text-sm text-gray-500 mb-2">现状：文字乱码是硬伤。</p>
+                    <ul class="text-sm">
+                        <li><strong>内置编辑器</strong>：提供涂抹、文字贴纸功能。</li>
+                        <li><strong>闭环逻辑</strong>：图不可用时，现场修图，而不是直接废弃。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 (Legacy 4). 定价 -->
+        <div class="slide">
+            <h2>6. 定价与治理策略</h2>
+
+            <div class="mt-6 space-y-8">
+                <!-- VIP Pricing -->
+                <div>
+                    <h3 class="text-lg font-bold text-blue-800 mb-2">A. 付费 SaaS 商户 (VIP Pricing)</h3>
+                    <p class="text-sm text-gray-500 mb-3">定位：增值服务，接近成本价，作为会员福利。</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200 border border-blue-200 rounded-lg">
+                            <thead class="bg-blue-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">权益包</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">价格</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">折合单价
+                                    </th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-blue-800 uppercase">场景</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-blue-100">
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-blue-900">特惠加油包</td>
+                                    <td class="px-4 py-3 text-sm text-gray-700 font-bold">9.9元 / 20积分</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">0.5元/张</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">偶尔补量</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-blue-900">无限量加油包</td>
+                                    <td class="px-4 py-3 text-sm text-gray-700 font-bold">29.9元 / 100积分</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">0.3元/张</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">连锁/批量</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Standard Pricing -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-700 mb-2">B. 免费/普通商户 (Standard Pricing)</h3>
+                    <p class="text-sm text-gray-500 mb-3">定位：价格锚点，引导转化为 SaaS 会员。</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">权益包</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">价格</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">折合单价
+                                    </th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">场景</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-900">单次包</td>
+                                    <td class="px-4 py-3 text-sm text-gray-700 font-bold">19.9元 / 10积分</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">2.0元/张</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">单次购买</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-900">标准包</td>
+                                    <td class="px-4 py-3 text-sm text-gray-700 font-bold">49.9元 / 30积分</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">1.66元/张</td>
+                                    <td class="px-4 py-3 text-sm text-gray-500">作为锚点</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                <h3 class="text-yellow-800 mt-0">退款机制 (Refund Policy)</h3>
+                <ul class="mt-2 space-y-2 text-sm text-yellow-900">
+                    <li><span class="font-bold">秒退</span>：系统失败、敏感词误杀 -> 自动原路退回。</li>
+                    <li><span class="font-bold">不退</span>：主观觉得丑（引导修图）、违规内容（惩罚）。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-400 text-sm mt-12 pb-10">
+            <p>AI 商业化项目组 | 2025</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
